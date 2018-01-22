@@ -1,0 +1,6 @@
+<% if logged_in? %>
+  <h1>Hi, <%= current_user.username %>.</h1>
+  <%= button_to "Log out", logout_path, method: :delete %>
+<% else %>
+  <% require_logged_in %>
+<% end %>

@@ -1,7 +1,14 @@
 class ReviewsController < ApplicationController
   before_action :find_review, only: [:show, :edit, :destroy, :update]
+
+
   def index
-    @reviews = Review.all
+    if logged_in?
+      current_user
+      @reviews = current_user.reviews
+    else
+      @reviews = Review.all
+    end
   end
 
   def show
@@ -15,9 +22,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
+
     @review = Review.new(review_params)
+    @review.user = current_user
     if @review.save
-      redirect_to review_path(@review)
+      redirect_to architecture_path(@review.architecture)
     else
       flash[:error] = @review.errors.full_messages
       redirect_to new_review_path
@@ -49,7 +58,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content, :rating, :user_id, :architecture_id)
+    params.require(:review).permit(:content, :rating, :architecture_id)
   end
 
 end

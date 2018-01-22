@@ -3,3 +3,9 @@
 <br>
 <h3>Created By: <%= link_to @architecture.artist.name, artist_path(@architecture.artist) %></h2>
 <h3>Location: <%= link_to @architecture.city.name, city_path(@architecture.city) %></h2>
+<ul>
+<% @architecture.reviews.each do |review| %>
+  <li><%= review.user.username %> - <%= review.rating %></li><br />
+  <p><%= review.content %></p><br />
+<% end %>
+</ul>
