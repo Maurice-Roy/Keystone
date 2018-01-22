@@ -1,0 +1,21 @@
+<% if flash[:error] %>
+<ul>
+  <% flash[:error].each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<h1> Review An Architecture</h1>
+<%= form_for @review do |f| %>
+  <%= f.label :content, "Write your Review: " %>
+  <%= f.text_area :content %>
+  <br />
+  <%= f.label :user, "User: " %>
+  <%= f.collection_select :user_id, @users, :id, :name%>
+  <%= f.label :architecture, "Architecture: " %>
+  <%= f.collection_select :architecture_id, @architectures, :id, :name%>
+  <%= f.label :rating, "Rating" %>
+  <%= f.select :rating, @ratings %>
+  <%= f.submit %>
+<% end %>

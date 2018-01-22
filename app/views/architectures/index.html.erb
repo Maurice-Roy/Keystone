@@ -1,0 +1,7 @@
+<h1>All Architectural Works</h1>
+
+<ul>
+<% @architectures.each do |architecture| %>
+  <li><%= link_to architecture.name, architecture_path(architecture) %></li>
+<% end %>
+</ul>

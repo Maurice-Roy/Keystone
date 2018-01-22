@@ -1,0 +1,5 @@
+<h1><%= @architecture.name %></h1>
+<h2>Year Created: <%= @architecture.year_created %></h2>
+<br>
+<h3>Created By: <%= link_to @architecture.artist.name, artist_path(@architecture.artist) %></h2>
+<h3>Location: <%= link_to @architecture.city.name, city_path(@architecture.city) %></h2>

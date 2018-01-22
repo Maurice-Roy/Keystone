@@ -1,0 +1,14 @@
+<% if flash[:error] %>
+<ul>
+  <% flash[:error].each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+
+<% end %>
+
+<%= form_for @city do |f| %>
+  <%= f.label :name, "Name: " %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>

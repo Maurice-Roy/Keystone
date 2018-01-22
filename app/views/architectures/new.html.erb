@@ -1,0 +1,21 @@
+<% if flash[:error] %>
+<ul>
+  <% flash[:error].each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+
+<% end %>
+
+
+
+<%= form_for @architecture do |f| %>
+  <%= f.label :name, "Name: " %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :artist_id, "Artist: " %>
+  <%= f.collection_select :artist_id, @artists, :id, :name %>
+  <%= f.label :city_id, "City: " %>
+  <%= f.collection_select :city_id, @cities, :id, :name %>
+  <%= f.submit %>
+<% end %>
