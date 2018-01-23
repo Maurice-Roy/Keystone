@@ -1,4 +1,4 @@
-<% if flash[:error] %>
+<% if flash[:error] && flash[:error].last != "Need to log in!" %>
 <ul>
   <% flash[:error].each do |message| %>
     <li><%= message %></li>

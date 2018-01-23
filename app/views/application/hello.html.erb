@@ -6,9 +6,21 @@
   <% require_logged_in %>
 <% end %>
 
+<% if flash[:error] %>
+<ul>
+  <%= flash[:error] %>
+</ul>
+<% end %>
 
 
+<%= button_to "All Architecture", architectures_path, method: :get %>
+<%= button_to "All Artists", artists_path, method: :get %>
 
+<h3>Search for Architecture by name:</h3>
+<%= form_tag(architectures_path, :method => "get") do %>
+    <%= text_field_tag :name, params[:name]%>
+    <%= submit_tag "Search" %>
+<% end %> <br><br>
 
 
 

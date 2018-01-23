@@ -1,4 +1,8 @@
-<%= render "layouts/show_flash_error" %>
+<% if flash[:error] %>
+<ul>
+  <%= flash[:error] %>
+</ul>
+<% end %>
 
 
 <%= form_tag("/login", method: "post") do%>

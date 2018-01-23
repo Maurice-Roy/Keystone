@@ -1,7 +1,17 @@
 class ArchitecturesController < ApplicationController
   before_action :find_architecture, only: [:show, :edit, :destroy, :update]
   def index
-    @architectures = Architecture.all
+    if params[:name]
+      @architecture = Architecture.find_by(name: params[:name] )
+      if @architecture
+        redirect_to @architecture
+      else
+        flash[:error] = "Couldn't find any architecture with that name!"
+        redirect_to '/'
+      end
+    else
+      @architectures = Architecture.all
+    end
   end
 
   def show

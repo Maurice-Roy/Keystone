@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logged_in
-    flash[:error] ||= ["Need to log in!"]
+    # flash[:error] << "Need to log in!"
     redirect_to '/login' unless logged_in?
   end
 end
