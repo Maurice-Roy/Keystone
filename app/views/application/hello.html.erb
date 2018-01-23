@@ -1,6 +1,23 @@
 <% if logged_in? %>
-  <h1>Hi, <%= current_user.username %>.</h1>
+  <h1><%= current_user.username%>'s Reviews</h1>
   <%= button_to "Log out", logout_path, method: :delete %>
+  <br />
 <% else %>
   <% require_logged_in %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+<% current_user.reviews.each do |review| %>
+  Review for: <%= link_to review.architecture.name, architecture_path(review.architecture) %><br />
+  Rating: <%= review.rating %><br />
+  <%= review.content %><br /><br />
 <% end %>

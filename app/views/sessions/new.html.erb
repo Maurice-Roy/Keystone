@@ -1,8 +1,5 @@
-<% if flash[:error] %>
-<ul>
-  <%= flash[:error] %>
-</ul>
-<% end %>
+<%= render "layouts/show_flash_error" %>
+
 
 <%= form_tag("/login", method: "post") do%>
   <%= label_tag :username %>

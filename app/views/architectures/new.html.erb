@@ -1,13 +1,4 @@
-<% if flash[:error] %>
-<ul>
-  <% flash[:error].each do |message| %>
-    <li><%= message %></li>
-  <% end %>
-</ul>
-
-<% end %>
-
-
+<%= render "layouts/show_flash_error" %>
 
 <%= form_for @architecture do |f| %>
   <%= f.label :name, "Name: " %>

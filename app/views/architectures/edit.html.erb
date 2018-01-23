@@ -1,11 +1,5 @@
-<% if flash[:error] %>
-<ul>
-  <% flash[:error].each do |message| %>
-    <li><%= message %></li>
-  <% end %>
-</ul>
+<%= render "layouts/show_flash_error" %>
 
-<% end %>
 
 
 
