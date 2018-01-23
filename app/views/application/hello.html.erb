@@ -1,35 +1,12 @@
-<% if logged_in? %>
-  <h1><%= current_user.username%>'s Reviews</h1>
-  <%= button_to "Log out", logout_path, method: :delete %>
-  <br />
-<% else %>
-  <% require_logged_in %>
-<% end %>
-
 <% if flash[:error] %>
-<ul>
   <%= flash[:error] %>
-</ul>
 <% end %>
 
 
-<%= button_to "All Architecture", architectures_path, method: :get %>
-<%= button_to "All Artists", artists_path, method: :get %>
-
-<h3>Search for Architecture by name:</h3>
-<%= form_tag(architectures_path, :method => "get") do %>
-    <%= text_field_tag :name, params[:name]%>
-    <%= submit_tag "Search" %>
-<% end %> <br><br>
-
-
-
-
-
-
-
+<h3>My Reviews</h3>
 <% current_user.reviews.each do |review| %>
   Review for: <%= link_to review.architecture.name, architecture_path(review.architecture) %><br />
   Rating: <%= review.rating %><br />
-  <%= review.content %><br /><br />
+  <%= review.content %>
+  <%= button_to "Delete", review_path(review), method: :delete %><br /><br />
 <% end %>
