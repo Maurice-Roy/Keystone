@@ -1,11 +1,26 @@
+html {
+   background-image: url('backgrounds/brutal.jpg');
+   background-repeat: no-repeat;
+   background-size: 100%;
+   background-attachment: fixed;
+}
+
 /*NAVIGATION BAR*/
 .heading {
   display: flex;
-  background-color: grey;
+  background: linear-gradient(to bottom right, black, grey);
   border: 3px solid black;
   padding: 0 5px 5px 5px;
   border-radius: 5px;
+  margin-bottom: 10px;
   justify-content: space-between;
+}
+
+
+
+h1 {
+  font-weight: bold;
+  color: #eee;
 }
 
 .left_block {
@@ -17,16 +32,13 @@
   font-weight: bold;
   color: #eee;
   display: flex;
+  
 }
 
 .title_buttons {
   background-color: grey;
   margin-left: 1px;
   float: left;
-}
-
-.title_buttons:hover {
-  background-color: red;
 }
 
 .middle_block {
@@ -39,15 +51,20 @@
 .right_block {
   margin-top: 2px;
   font-size: 15px;
-  color: blue;
+  color: #eee;
   float: right;
+}
+
+.login_status {
+  font-weight: bold;
+
 }
 
 /*LOGIN/SIGNUP BAR*/
 .login {
   border-radius: 5px;
   display: flex;
-  background-color: grey;
+  background: linear-gradient(to bottom left, black, grey);
   border: 1.5px solid black;
   padding: 5px 5px 5px 5px;
   font-weight: bold;

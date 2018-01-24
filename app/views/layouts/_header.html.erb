@@ -22,7 +22,7 @@
   <div class="right_block">
     <a class ="log">
     <% if logged_in? %>
-      <a class="login_status">Logged in as <%= current_user.username%>
+      <a class="login_status">Logged in as <br /><%= link_to current_user.username, '/'%><br />
         <%= button_to "Log out", logout_path, method: :delete %></a>
     <% else %>
       <% require_logged_in %>
