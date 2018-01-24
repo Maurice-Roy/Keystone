@@ -2,8 +2,12 @@ class UsersController < ApplicationController
   skip_before_action :current_user, only: [:new, :create]
   skip_before_action :require_logged_in, only: [:new, :create]
   def new
-    @user = User.new
-    @disable_nav = true
+    if logged_in?
+      redirect_to '/'
+    else
+      @user = User.new
+      @disable_nav = true
+    end
   end
 
   def create
