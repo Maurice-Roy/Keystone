@@ -59,7 +59,7 @@ class ArchitecturesController < ApplicationController
   end
 
   def architecture_params
-    params.require(:architecture).permit(:name, :year_created, :city_id, :artist_id)
+    params.require(:architecture).permit(:name, :style, :picture_url, :city_id, :artist_id)
   end
 
 end

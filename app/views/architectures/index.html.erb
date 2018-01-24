@@ -2,6 +2,6 @@
 
 <ul>
 <% @architectures.each do |architecture| %>
-  <li><%= link_to architecture.name, architecture_path(architecture) %></li>
+  <li><%= link_to architecture.name.capitalize, architecture_path(architecture) %></li>
 <% end %>
 </ul>

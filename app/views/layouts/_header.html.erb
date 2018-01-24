@@ -1,22 +1,33 @@
-<div class="title_bar">
+<div class="heading" >
 
-  <a class="architecture_search">Search for Architecture by name:
-  <%= form_tag(architectures_path, :method => "get") do %>
-      <%= text_field_tag :name, params[:name]%>
-      <%= submit_tag "Search" %>
-  <% end %></a> <br><br>
+  <div class="left_block">
+    <div class="title">
+      KEYSTONE LITE
+    </div>
+    <div class="buttons">
+      <a class="title_buttons"><%= button_to "All Architectures", architectures_path, method: :get %></a>
+      <a class="title_buttons"><%= button_to "All Artists", artists_path, method: :get %></a>
+      <a class="title_buttons"><%= button_to "Write a Review", new_review_path, method: :get %></a>
+    </div>
+  </div>
 
-  <a class="title_buttons"><%= button_to "All Architectures", architectures_path, method: :get %></a>
-  <a class="title_buttons"><%= button_to "All Artists", artists_path, method: :get %></a>
-  <a class="title_buttons"><%= button_to "Write a Review", new_review_path, method: :get %></a>
+  <div class="middle_block">
+    <a class="architecture_search">Search for Architecture:
+    <%= form_tag(architectures_path, :method => "get") do %>
+        <%= text_field_tag :name, params[:name]%>
+        <%= submit_tag "Search" %>
+    <% end %></a>
+  </div>
 
-  <% if logged_in? %>
-    <a class="login_status"><h4>Logged in as <%= current_user.username%>
-      <%= button_to "Log out", logout_path, method: :delete %></a>
-    </h4>
-    <br />
-  <% else %>
-    <% require_logged_in %>
-  <% end %>
+  <div class="right_block">
+    <a class ="log">
+    <% if logged_in? %>
+      <a class="login_status">Logged in as <%= current_user.username%>
+        <%= button_to "Log out", logout_path, method: :delete %></a>
+    <% else %>
+      <% require_logged_in %>
+    <% end %>
+  </a>
+  </div>
 
 </div>

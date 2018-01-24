@@ -1,11 +1,11 @@
-<h1><%= @architecture.name %></h1>
-<h2>Year Created: <%= @architecture.year_created %></h2>
+<h1><%= @architecture.name.capitalize %></h1>
+<h2>Style: <%= @architecture.style %></h2>
 <br>
 <h3>Created By: <%= link_to @architecture.artist.name, artist_path(@architecture.artist) %></h2>
 <h3>Location: <%= link_to @architecture.city.name, city_path(@architecture.city) %></h2>
 <ul>
 <% @architecture.reviews.each do |review| %>
-  <li><%= review.user.username %> - <%= review.rating %></li><br />
+  <li><%= review.user.username %>'s rating: <%= review.rating %></li>
   <p><%= review.content %></p><br />
 <% end %>
 </ul>

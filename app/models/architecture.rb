@@ -4,7 +4,5 @@ class Architecture < ApplicationRecord
   has_many :reviews
 
   validates :name, uniqueness: true, presence: true
-  validates :year_created, presence: true
-  #validate associations?
 
 end

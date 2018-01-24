@@ -3,6 +3,10 @@
 <%= form_for @architecture do |f| %>
   <%= f.label :name, "Name: " %>
   <%= f.text_field :name %>
+  <%= f.label :style, "Style: " %>
+  <%= f.text_field :style %>
+  <%= f.label :picture_url, "Picture URL: " %>
+  <%= f.text_field :picture_url%>    
   <br>
   <%= f.label :artist_id, "Artist: " %>
   <%= f.collection_select :artist_id, @artists, :id, :name %>

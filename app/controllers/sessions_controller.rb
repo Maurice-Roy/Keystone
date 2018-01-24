@@ -4,9 +4,8 @@ class SessionsController < ApplicationController
 
   def new
     @user = User.new
+    @disable_nav = true
   end
-
-
 
   def create
     @user = User.find_by(username: params[:username])

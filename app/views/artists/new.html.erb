@@ -1,16 +1,7 @@
 <%= render "layouts/show_flash_error" %>
 
-
-
-
 <%= form_for @artist do |f| %>
   <%= f.label :name, "Name: " %>
   <%= f.text_field :name %>
-  <br /><br />
-  <%= f.label :birth_year, "Birth year: " %>
-  <%= f.text_field :birth_year %>
-  <br /><br />
-  <%= f.label :bio, "Biography: " %>
-  <%= f.text_area :bio %>
   <%= f.submit %>
 <% end %>

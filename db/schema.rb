@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20180119195351) do
 
   create_table "architectures", force: :cascade do |t|
     t.string "name"
-    t.integer "year_created"
+    t.string "style"
+    t.string "picture_url"
     t.integer "city_id"
     t.integer "artist_id"
     t.datetime "created_at", null: false
@@ -31,8 +32,6 @@ ActiveRecord::Schema.define(version: 20180119195351) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
-    t.text "bio"
-    t.integer "birth_year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

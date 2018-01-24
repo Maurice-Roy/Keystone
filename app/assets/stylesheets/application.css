@@ -1,23 +1,41 @@
-.title_bar {
-  background-color: #eee;
-  height:60px;
-  width:960px;
-  border: solid red;
+.heading {
+  display: flex;
+  background-color: grey;
+  border: 3px solid black;
+  padding: 0 5px 5px 5px;
+  justify-content: space-between;
+}
+
+.left_block {
+  float: left;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  color: #eee;
+  display: flex;
 }
 
 .title_buttons {
-  border:2px solid #4CAF50;
+  border:2px solid #fff;
   float: left;
 }
 
-.architecture_search {
-  color: #2ACF13;
-  float: left;
-  padding-left: 10px;
-  display: inline;
+.title_buttons:hover {
+  background-color: red;
 }
 
-.login_status {
+.middle_block {
+  font-size: 30px;
+  font-weight: bold;
+  color: #eee;
+}
+
+
+.right_block {
+  margin-top: 2px;
+  font-size: 15px;
   color: blue;
   float: right;
 }
