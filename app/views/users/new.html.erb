@@ -1,9 +1,10 @@
 <%= render "layouts/show_flash_error" %>
 
-
-<%= form_for @user do |f| %>
-  Username: <%= f.text_field :username %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-<%= f.submit "Submit" %>
-<% end %>
+<div class="login">
+  <%= form_for @user do |f| %>
+    Username: <%= f.text_field :username %>
+    Password: <%= f.password_field :password %>
+    Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+  <% end %>  
+</div>

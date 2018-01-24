@@ -1,8 +1,10 @@
+/*NAVIGATION BAR*/
 .heading {
   display: flex;
   background-color: grey;
   border: 3px solid black;
   padding: 0 5px 5px 5px;
+  border-radius: 5px;
   justify-content: space-between;
 }
 
@@ -18,7 +20,8 @@
 }
 
 .title_buttons {
-  border:2px solid #fff;
+  background-color: grey;
+  margin-left: 1px;
   float: left;
 }
 
@@ -38,4 +41,55 @@
   font-size: 15px;
   color: blue;
   float: right;
+}
+
+/*LOGIN/SIGNUP BAR*/
+.login {
+  border-radius: 5px;
+  display: flex;
+  background-color: grey;
+  border: 1.5px solid black;
+  padding: 5px 5px 5px 5px;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+input[type=text] {
+    margin-left: 5px;
+    margin-right: 10px;
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=password] {
+    margin-left: 5px;
+    margin-right: 10px;
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=password]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border: 1px solid black;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+input[type=submit]:hover {
+  background: linear-gradient(to bottom right, red, yellow);
 }
