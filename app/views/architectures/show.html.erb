@@ -1,5 +1,5 @@
 <h1><%= @architecture.name.capitalize %></h1>
-<h2>Style: <%= @architecture.style %></h2>
+<h2>Style: <%= @architecture.style.name %></h2>
 <br>
 <h3>Created By: <%= link_to @architecture.artist.name, artist_path(@architecture.artist) %></h2>
 <h3>Location: <%= link_to @architecture.city.name, city_path(@architecture.city) %></h2>
@@ -9,3 +9,5 @@
   <p><%= review.content %></p><br />
 <% end %>
 </ul>
+
+<%= button_to "Edit this Architecture", edit_architecture_path, method: :get %>

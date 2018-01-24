@@ -1,0 +1,7 @@
+<h1>All Your Styles</h1>
+<%= button_to "Add a Style", new_style_path, method: :get %>
+<ul>
+<% @styles.each do |style| %>
+  <li><%= link_to style.name, style_path(style) %></li>
+<% end %>
+</ul>

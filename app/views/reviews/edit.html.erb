@@ -1,0 +1,16 @@
+<%= render "layouts/show_flash_error" %>
+
+
+<h1> Review An Architecture</h1>
+<%= form_for @review do |f| %>
+
+  <%= f.label :architecture, "Architecture: " %>
+  <%= f.collection_select :architecture_id, @architectures, :id, :name%>
+  <%= f.label :rating, "Rating" %>
+  <%= f.select :rating, @ratings %>
+  <br /><br /><br />
+  <%= f.label :content, "Write your Review: " %>
+  <%= f.text_area :content %>
+  <br /><br />
+  <%= f.submit %>
+<% end %>

@@ -1,5 +1,5 @@
 <h1>All Your Artists</h1>
-
+<%= button_to "Add an Artist", new_artist_path, method: :get %>
 <ul>
 <% @artists.each do |artist| %>
   <li><%= link_to artist.name, artist_path(artist) %></li>

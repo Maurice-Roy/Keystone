@@ -20,6 +20,7 @@ class ArchitecturesController < ApplicationController
   def new
     @artists = Artist.all
     @cities = City.all
+    @styles = Style.all
     @architecture = Architecture.new
   end
 
@@ -36,6 +37,7 @@ class ArchitecturesController < ApplicationController
   def edit
     @artists = Artist.all
     @cities = City.all
+    @styles = Style.all
   end
 
   def update
@@ -59,7 +61,7 @@ class ArchitecturesController < ApplicationController
   end
 
   def architecture_params
-    params.require(:architecture).permit(:name, :style, :picture_url, :city_id, :artist_id)
+    params.require(:architecture).permit(:name, :picture_url, :style_id, :city_id, :artist_id)
   end
 
 end

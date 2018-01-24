@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :find_review, only: [:show, :edit, :destroy, :update]
 
-
   def index
     if logged_in?
       current_user
@@ -34,13 +33,15 @@ class ReviewsController < ApplicationController
 
   def edit
     @architectures = Architecture.all
+    @ratings = [5,4,3,2,1]
   end
 
   def update
     @review.update(review_params)
     if @review.valid?
-      redirect_to review_path(@review)
+      redirect_to '/'
     else
+      flash[:error] = @review.errors.full_messages      
       redirect_to edit_review_path
     end
   end

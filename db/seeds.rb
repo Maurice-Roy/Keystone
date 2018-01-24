@@ -25,7 +25,9 @@ url = "https://en.wikipedia.org/wiki/America%27s_Favorite_Architecture"
 }
 @information.shift
 @information.each do |entry|
+  entry[:style] = "Misc" if entry[:style] == ""
+  @style = Style.find_or_create_by(name: entry[:style])
   @city = City.find_or_create_by(name: entry[:city])
   @artist = Artist.find_or_create_by(name: entry[:architect])
-  Architecture.create(name: entry[:structure], style: entry[:style], picture_url: entry[:picture], city_id: @city.id, artist_id: @artist.id)
+  Architecture.create(name: entry[:structure], style_id: @style.id, picture_url: entry[:picture], city_id: @city.id, artist_id: @artist.id)
 end

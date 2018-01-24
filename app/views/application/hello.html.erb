@@ -7,6 +7,7 @@
 <% current_user.reviews.each do |review| %>
   Review for: <%= link_to review.architecture.name, architecture_path(review.architecture) %><br />
   Rating: <%= review.rating %><br />
-  <%= review.content %>
+  <%= review.content %><br /><br />
+  <%= button_to "Edit", edit_review_path(review), method: :get %>
   <%= button_to "Delete", review_path(review), method: :delete %><br /><br />
 <% end %>

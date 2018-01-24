@@ -1,0 +1,7 @@
+<h2>Name: <%= @style.name %></h2>
+
+<ul>
+  <% @style.architectures.each do |architecture| %>
+    <li><%= link_to architecture.name, architecture_path(architecture) %></li>
+  <% end %>
+</ul>
