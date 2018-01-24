@@ -199,9 +199,13 @@ input[type=submit]:hover {
   justify-content: space-between;
 }
 
+.home_review {
+  margin-left: 15px;
+}
+
 /*OTHER STUFFS*/
 
-#welcome {
+.welcome {
   font-family: 'Plaster', serif;
   text-align: center;
   color: grey;
