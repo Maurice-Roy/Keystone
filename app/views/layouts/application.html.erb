@@ -3,14 +3,18 @@
   <head>
     <title>Mod2Project</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <link rel="stylesheet" href="new.css"
+    <link rel="stylesheet" href="new.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Diplomata|Fascinate|Plaster|Play|Roboto" rel="stylesheet">
   </head>
 
   <body>
-    <%= render "layouts/header" unless @disable_nav %>
-    <%= yield %>
-  </body>
+      <%= render "layouts/header" unless @disable_nav %>
+      <div class="container_bg">
+        <%= yield %>
+      </div>
+    </body>
 </html>

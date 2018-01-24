@@ -1,16 +1,18 @@
 <%= render "layouts/show_flash_error" %>
 
-<%= form_for @architecture do |f| %>
-  <%= f.label :name, "Name: " %>
-  <%= f.text_field :name %>
-  <%= f.label :picture_url, "Picture URL: " %>
-  <%= f.text_field :picture_url%>
-  <br>
-  <%= f.label :artist_id, "Artist: " %>
-  <%= f.collection_select :artist_id, @artists, :id, :name %>
-  <%= f.label :style_id, "Style: " %>
-  <%= f.collection_select :style_id, @styles, :id, :name %>
-  <%= f.label :city_id, "City: " %>
-  <%= f.collection_select :city_id, @cities, :id, :name %>
-  <%= f.submit %>
-<% end %>
+<div class="form">
+  <%= form_for @architecture do |f| %>
+    <%= f.label :name, "Name: " %>
+    <%= f.text_field :name %>
+    <%= f.label :picture_url, "Picture URL: " %>
+    <%= f.text_field :picture_url%>
+    <br>
+    <%= f.label :artist_id, "Artist: " %>
+    <%= f.collection_select :artist_id, @artists, :id, :name %>
+    <%= f.label :style_id, "Style: " %>
+    <%= f.collection_select :style_id, @styles, :id, :name %>
+    <%= f.label :city_id, "City: " %>
+    <%= f.collection_select :city_id, @cities, :id, :name %>
+    <%= f.submit %>
+  <% end %>
+</div>

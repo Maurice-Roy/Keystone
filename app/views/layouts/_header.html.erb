@@ -1,12 +1,17 @@
 <div class="heading" >
-
   <div class="left_block">
     <div class="title">
-      KEYSTONE LITE
+
+      <div class="logo">
+        <i class="fa fa-university" ></i>
+      </div>
+      <%= link_to "KEYSTONE", '/'%>
     </div>
+
     <div class="buttons">
       <a class="title_buttons"><%= button_to "All Architectures", architectures_path, method: :get %></a>
       <a class="title_buttons"><%= button_to "All Artists", artists_path, method: :get %></a>
+      <a class="title_buttons"><%= button_to "All Cities", cities_path, method: :get %></a>
       <a class="title_buttons"><%= button_to "Write a Review", new_review_path, method: :get %></a>
     </div>
   </div>
@@ -22,12 +27,13 @@
   <div class="right_block">
     <a class ="log">
     <% if logged_in? %>
-      <a class="login_status">Logged in as <br /><%= link_to current_user.username, '/'%><br />
+      <a class="login_status">Logged in as <br /><div class="item">
+        <%= link_to current_user.username, '/'%>
+      </a>
+      </div>
         <%= button_to "Log out", logout_path, method: :delete %></a>
     <% else %>
       <% require_logged_in %>
     <% end %>
-  </a>
   </div>
-
 </div>

@@ -1,13 +1,24 @@
-<h1><%= @architecture.name.capitalize %></h1>
-<h2>Style: <%= @architecture.style.name %></h2>
-<br>
-<h3>Created By: <%= link_to @architecture.artist.name, artist_path(@architecture.artist) %></h2>
-<h3>Location: <%= link_to @architecture.city.name, city_path(@architecture.city) %></h2>
-<ul>
-<% @architecture.reviews.each do |review| %>
-  <li><%= review.user.username %>'s rating: <%= review.rating %></li>
-  <p><%= review.content %></p><br />
-<% end %>
-</ul>
+<div class="architecture">
+  <div class="arc-left-side">
+    <h1><%= @architecture.name.capitalize %></h1>
+    <h2>Style: <%= @architecture.style.name %></h2>
+    <div class="item">
+      <h3>Created By: <%= link_to @architecture.artist.name, artist_path(@architecture.artist) %></h2>
+      <h3>Location: <%= link_to @architecture.city.name, city_path(@architecture.city) %></h2>
+    </div>
 
-<%= button_to "Edit this Architecture", edit_architecture_path, method: :get %>
+    <ul>
+    <% @architecture.reviews.each do |review| %>
+      <li class="item"><%= review.user.username %>'s rating: <%= review.rating %></li>
+      <p><%= review.content %></p><br />
+    <% end %>
+    </ul>
+
+    <%= button_to "Edit this Architecture", edit_architecture_path, method: :get %>
+  </div>
+
+  <div class="arc-right-side">
+    <img src="<%=@architecture.picture_url%>" alt="picture"
+  </div>
+
+</div>

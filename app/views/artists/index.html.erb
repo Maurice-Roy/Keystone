@@ -1,7 +1,11 @@
 <h1>All Your Artists</h1>
-<%= button_to "Add an Artist", new_artist_path, method: :get %>
+<div class="add_item">
+  <%= button_to "Add an Artist", new_artist_path, method: :get %>
+</div>
 <ul>
-<% @artists.each do |artist| %>
-  <li><%= link_to artist.name, artist_path(artist) %></li>
-<% end %>
-</ul>
+<div class="items">
+  <% @artists.each do |artist| %>
+    <li class="item"><%= link_to artist.name, artist_path(artist) %></li>
+  <% end %>
+  </ul>
+</div>

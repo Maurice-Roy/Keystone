@@ -9,6 +9,13 @@ url = "https://en.wikipedia.org/wiki/America%27s_Favorite_Architecture"
 @page = Nokogiri::HTML(open(url))
 @info = @page.css("table.wikitable tr")
 
+def fix_url(string)
+  url = string.split("/")
+  url.pop
+  url.delete("thumb")
+  url = url.join("/")
+end
+
 @information = @page.css('table.wikitable tr').map { |tr|
   rank, structure, city, state, architect, style, picture = tr.css('td,th')
   structure, city, architect, style = [structure, city, architect, style].map{ |n| n && n.text ? n.text : nil }
@@ -29,5 +36,12 @@ url = "https://en.wikipedia.org/wiki/America%27s_Favorite_Architecture"
   @style = Style.find_or_create_by(name: entry[:style])
   @city = City.find_or_create_by(name: entry[:city])
   @artist = Artist.find_or_create_by(name: entry[:architect])
-  Architecture.create(name: entry[:structure], style_id: @style.id, picture_url: entry[:picture], city_id: @city.id, artist_id: @artist.id)
+
+  if entry[:picture]
+    @picture_url = fix_url(entry[:picture])
+  else
+    @picture_url = "https://vignette.wikia.nocookie.net/randomstuffstuff/images/4/49/How-to-make-ANYTHING-awesome-face.jpg/revision/latest?cb=20110728020836"
+  end
+  
+  Architecture.create(name: entry[:structure], style_id: @style.id, picture_url: @picture_url, city_id: @city.id, artist_id: @artist.id)
 end
