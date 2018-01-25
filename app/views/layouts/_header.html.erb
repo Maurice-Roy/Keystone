@@ -14,6 +14,8 @@
       <a class="title_buttons"><%= button_to "Cities", cities_path, method: :get %></a>
       <a class="title_buttons"><%= button_to "Styles", styles_path, method: :get %></a>
       <a class="title_buttons"><%= button_to "Write a Review", new_review_path, method: :get %></a>
+      <a class="title_buttons"><%= button_to "Analytics", 'analytics', method: :get %>
+
     </div>
   </div>
 
@@ -23,6 +25,7 @@
         <%= text_field_tag :name, params[:name]%>
         <%= submit_tag "Search" %>
     <% end %></a>
+
   </div>
 
   <div class="right_block">

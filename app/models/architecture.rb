@@ -33,5 +33,11 @@ class Architecture < ApplicationRecord
     "#{@architecture.name}:   " + @architecture.reviews.count.to_s
   end
 
+  def average_rating
+    @ratings = self.reviews.map { |review| review.rating.to_f }
+    @average = @ratings.reduce(:+) / @ratings.count
+  end
+
+
 
 end

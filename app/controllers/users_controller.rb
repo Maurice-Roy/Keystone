@@ -25,6 +25,13 @@ class UsersController < ApplicationController
   def analytics
     @most_city_architectures = City.most_architectures
     @most_reviwed_architecture = Architecture.most_reviewed
+    @architecture_highest_rated = Review.highest_rated
+    @architecture_lowest_rated = Review.lowest_rated
+    @review_average_length = Review.average_content_rating
+    @average_review_rating = Review.average_rated
+    @highest_number_of_reviews = User.highest_number_of_reviews
+    @users_average_review_count = User.average_number_of_reviews
+    # @city_with_highest_avg_reviews = City.highest_reviewed_architecture
   end
 
   private
