@@ -1,0 +1,10 @@
+<% if @user.admin %>
+<h4>City with highest number of architectural works:</h4>
+<li><%= @most_city_architectures %></li>
+
+<h4>Architecture with most Reviews:</h4>
+<li><%= @most_reviwed_architecture%></li>
+
+<% else %>
+  <p>"You are not an admin!"</p>
+<% end %>

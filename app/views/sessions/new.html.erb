@@ -1,8 +1,9 @@
-<% if flash[:error] %>
-<ul>
-  <%= flash[:error] %>
-</ul>
-<% end %>
+<div class="errors">
+  <% if flash[:error] %>
+    <%= flash[:error] %>
+  <% end %>
+</div>
+
 
 <div class="login">
   <%= form_tag("/login", method: "post") do%>

@@ -5,7 +5,7 @@
     <%= f.label :name, "Name: " %>
     <%= f.text_field :name %>
     <%= f.label :picture_url, "Picture URL: " %>
-    <%= f.text_field :picture_url%>
+    <%= f.text_field :picture_url, value: 'https://www.ngdc.noaa.gov/hazard/icons/med_res/25/25_097.jpg'%>
     <br>
     <%= f.label :artist_id, "Artist: " %>
     <%= f.collection_select :artist_id, @artists, :id, :name %>

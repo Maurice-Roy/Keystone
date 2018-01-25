@@ -1,15 +1,15 @@
 <div class="architecture">
   <div class="arc-left-side">
-    <h1><%= @architecture.name.capitalize %></h1>
-    <h2>Style: <%= @architecture.style.name %></h2>
+    <h1 class='welcome2'><%= @architecture.title %></h1>
+    <h2 class='item'>Style: <%= link_to @architecture.style_name, style_path(@architecture.style) %></h2>
     <div class="item">
-      <h3>Created By: <%= link_to @architecture.artist.name, artist_path(@architecture.artist) %></h2>
-      <h3>Location: <%= link_to @architecture.city.name, city_path(@architecture.city) %></h2>
+      <h3>Created By: <%= link_to @architecture.artist_name, artist_path(@architecture.artist) %></h2>
+      <h3>Location: <%= link_to @architecture.city_name, city_path(@architecture.city) %></h2>
     </div>
 
     <ul>
     <% @architecture.reviews.each do |review| %>
-      <li class="item"><%= review.user.username %>'s rating: <%= review.rating %></li>
+      <li class="item"><%= review.user_name %>'s rating: <%= review.rating %></li>
       <p><%= review.content %></p><br />
     <% end %>
     </ul>

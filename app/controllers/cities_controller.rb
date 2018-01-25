@@ -1,10 +1,11 @@
 class CitiesController < ApplicationController
   before_action :find_city, only: [:show, :edit, :destroy, :update]
   def index
-    @cities = City.all
+    @cities = City.sorted
   end
 
   def show
+    @architectures = @city.architectures.sort_by {|arc| arc.name}
   end
 
   def new

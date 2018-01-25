@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-
   resources :users, only: [:create]
   get 'signup', to: 'users#new', as: "signup"
+  get 'analytics', to: 'users#analytics', as: "analytics"
 
   resources :reviews, only: [:new, :create, :edit, :update, :destroy]
   resources :architectures

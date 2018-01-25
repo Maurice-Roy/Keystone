@@ -1,5 +1,7 @@
 class ArchitecturesController < ApplicationController
   before_action :find_architecture, only: [:show, :edit, :destroy, :update]
+  before_action :all_stuff, only: [:new, :edit]
+
   def index
     if params[:name]
       @architecture = Architecture.find_by(name: params[:name] )
@@ -10,7 +12,7 @@ class ArchitecturesController < ApplicationController
         redirect_to '/'
       end
     else
-      @architectures = Architecture.all
+      @architectures = Architecture.sorted
     end
   end
 
@@ -18,9 +20,6 @@ class ArchitecturesController < ApplicationController
   end
 
   def new
-    @artists = Artist.all
-    @cities = City.all
-    @styles = Style.all
     @architecture = Architecture.new
   end
 
@@ -35,9 +34,6 @@ class ArchitecturesController < ApplicationController
   end
 
   def edit
-    @artists = Artist.all
-    @cities = City.all
-    @styles = Style.all
   end
 
   def update
@@ -62,6 +58,12 @@ class ArchitecturesController < ApplicationController
 
   def architecture_params
     params.require(:architecture).permit(:name, :picture_url, :style_id, :city_id, :artist_id)
+  end
+
+  def all_stuff
+    @artists = Artist.sorted
+    @cities = City.sorted
+    @styles = Style.sorted
   end
 
 end

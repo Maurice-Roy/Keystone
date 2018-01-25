@@ -4,8 +4,8 @@
 </div>
 <div class="items">
   <ul>
+
   <% @cities.each do |city| %>
     <li class="item"><%= link_to city.name, city_path(city) %></li>
   <% end %>
-  </ul>
 </div>

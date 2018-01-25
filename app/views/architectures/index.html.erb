@@ -5,7 +5,7 @@
 <div class="items">
   <ul>
   <% @architectures.each do |architecture| %>
-    <li class="item"><%= link_to architecture.name.capitalize, architecture_path(architecture) %></li>
+    <li class="item"><%= link_to architecture.name.titleize, architecture_path(architecture) %></li>
   <% end %>
   </ul>
 </div>

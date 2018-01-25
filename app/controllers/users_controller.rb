@@ -22,6 +22,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def analytics
+    @most_city_architectures = City.most_architectures
+    @most_reviwed_architecture = Architecture.most_reviewed
+  end
+
   private
 
   def user_params

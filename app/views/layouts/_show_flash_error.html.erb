@@ -1,7 +1,9 @@
-<% if flash[:error] && flash[:error].last != "Need to log in!" %>
-<ul>
-  <% flash[:error].each do |message| %>
-    <li><%= message %></li>
+<div class="errors">
+  <% if flash[:error] && flash[:error].last != "Need to log in!" %>
+  <ul>
+    <% flash[:error].each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
   <% end %>
-</ul>
-<% end %>
+</div>

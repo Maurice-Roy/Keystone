@@ -1,7 +1,7 @@
-<h2>Name: <%= @city.name %></h2>
+<h1 class='welcome2'><%= @city.name %></h1>
 
 <ul>
-  <% @city.architectures.each do |architecture| %>
+  <% @architectures.each do |architecture| %>
     <li class="item"><%= link_to architecture.name, architecture_path(architecture) %></li>
   <% end %>
 </ul>

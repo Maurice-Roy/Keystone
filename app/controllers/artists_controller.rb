@@ -1,10 +1,11 @@
 class ArtistsController < ApplicationController
   before_action :find_artist, only: [:show, :edit, :destroy, :update]
   def index
-    @artists = Artist.all
+    @artists = Artist.sorted
   end
 
   def show
+    @architectures = @artist.architectures.sort_by {|arc| arc.name}
   end
 
   def new

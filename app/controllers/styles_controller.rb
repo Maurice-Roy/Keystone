@@ -1,10 +1,11 @@
 class StylesController < ApplicationController
   before_action :find_style, only: [:show, :edit, :destroy, :update]
   def index
-    @styles = Style.all
+    @styles = Style.sorted
   end
 
   def show
+    @architectures = @style.architectures.sort_by {|arc| arc.name}
   end
 
   def new
