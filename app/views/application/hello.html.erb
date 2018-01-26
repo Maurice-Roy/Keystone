@@ -9,7 +9,7 @@
   <% current_user.reviews.each do |review| %>
     Review for: <%= link_to review.architecture.name, architecture_path(review.architecture) %><br />
     Rating: <%= review.rating %><br />
-    <li><%= review.content %><br /><br /></li>
+    <li style="width:200px; max-width:200px; word-wrap:break-word;" ><%= review.content %><br /><br /></li>
     <div class="review_buttons">
       <%= button_to "Edit", edit_review_path(review), method: :get %>
       <%= button_to "Delete", review_path(review), method: :delete %><br /><br />

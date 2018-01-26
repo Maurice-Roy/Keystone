@@ -5,7 +5,9 @@ class Architecture < ApplicationRecord
   has_many :reviews
 
   validates :name, uniqueness: true, presence: true
-
+  validates :name, length: { minimum: 3}
+  validates :name, length: { maximum: 20}
+  
   def artist_name
     self.artist.name
   end

@@ -25,6 +25,7 @@ class ArchitecturesController < ApplicationController
 
   def create
     @architecture = Architecture.new(architecture_params)
+    @architecture.name = @architecture.name.titleize
     if @architecture.save
       redirect_to architecture_path(@architecture)
     else
@@ -38,6 +39,7 @@ class ArchitecturesController < ApplicationController
 
   def update
     @architecture.update(architecture_params)
+    @architecture.name = @architecture.name.titleize
     if @architecture.valid?
       redirect_to architecture_path(@architecture)
     else

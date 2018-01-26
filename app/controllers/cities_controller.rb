@@ -14,6 +14,7 @@ class CitiesController < ApplicationController
 
   def create
     @city = City.new(city_params)
+    @city.name = @city.name.titleize
     if @city.save
       redirect_to city_path(@city)
     else
@@ -27,6 +28,7 @@ class CitiesController < ApplicationController
 
   def update
     @city.update(city_params)
+    @city.name = @city.name.titleize    
     if @city.valid?
       redirect_to city_path(@city)
     else

@@ -14,6 +14,7 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
+    @artist.name = @artist.name.titleize
     if @artist.save
       redirect_to artist_path(@artist)
     else
@@ -27,6 +28,7 @@ class ArtistsController < ApplicationController
 
   def update
     @artist.update(artist_params)
+    @artist.name = @artist.name.titleize    
     if @artist.valid?
       redirect_to artist_path(@artist)
     else

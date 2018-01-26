@@ -14,6 +14,7 @@ class StylesController < ApplicationController
 
   def create
     @style = Style.new(style_params)
+    @style.name = @style.name.titleize
     if @style.save
       redirect_to style_path(@style)
     else
@@ -27,6 +28,7 @@ class StylesController < ApplicationController
 
   def update
     @style.update(style_params)
+    @style.name = @style.name.titleize    
     if @style.valid?
       redirect_to style_path(@style)
     else

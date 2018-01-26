@@ -3,7 +3,10 @@ class City < ApplicationRecord
   has_many :reviews, through: :architectures
   has_many :artists, through: :architectures
   has_many :styles, through: :architectures
+
   validates :name, uniqueness: true, presence: true
+  validates :name, length: { minimum: 3}
+  validates :name, length: { maximum: 20}
 
   def self.sorted
     City.all.sort_by {|city| city.name}
