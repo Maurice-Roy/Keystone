@@ -15,7 +15,6 @@ html {
   background:rgba(255,255,255, 0.7);
   position: fixed;top:0;bottom:0;left:0;right:0;
   z-index: -1;
-  /*background-attachment: fixed;*/
 }
 
 .form {
@@ -229,4 +228,28 @@ input[type=submit]:hover {
 .welcome2 {
   font-family: 'Plaster', serif;
   color: grey;
+}
+
+/*ANALYTICS PAGE*/
+
+.analytics_page {
+  display: flex;
+  justify-content: center;
+}
+
+.analytics_title {
+
+}
+
+.analytics_left{
+  margin-right: 30px;
+}
+.analytics_right{
+  margin-left: 30px;
+}
+
+.analytics_list {
+  margin-top: -15px;
+  padding-left: 10px;
+  font-style: italic;
 }

@@ -1,29 +1,28 @@
-<% if @user.admin %>
-<h4>City with highest number of architectural works:</h4>
-<li><%= @most_city_architectures %></li>
+<div class="analytics_page">
+  <% if @user.admin %>
+  <div class="analytics_left">
+    <h3 class="analytics_title">City with highest number of architectural works</h3>
+    <li class="analytics_list"><%= @most_city_architectures %></li>
+    <h3 class="analytics_title">Architecture with most Reviews</h3>
+    <li class="analytics_list"><%= @most_reviwed_architecture%></li>
+    <h3 class="analytics_title">Highest Rated Architecture</h3>
+    <li class="analytics_list"><%= @architecture_highest_rated%></li>
+    <h3 class="analytics_title">Lowest Rated Architecture</h3>
+    <li class="analytics_list"><%= @architecture_lowest_rated%></li>
+  </div>
 
-<h4>Architecture with most Reviews:</h4>
-<li><%= @most_reviwed_architecture%></li>
+  <div class="analytics_right">
+    <h3 class="analytics_title">Average Review Rating</h3>
+    <li class="analytics_list"><%= @average_review_rating %></li>
+    <h3 class="analytics_title">Average length of a Review</h3>
+    <li class="analytics_list"><%= @review_average_length %></li>
+    <h3 class="analytics_title">User with the most reviews</h3>
+    <li class="analytics_list"><%= @highest_number_of_reviews %></li>
+    <h3 class="analytics_title">Average Reviews per User</h3>
+    <li class="analytics_list"><%= @users_average_review_count %></li>
+  </div>
 
-<h4>Highest and Lowest Rated Architecture</h4>
-<li><%= @architecture_highest_rated%></li>
-<li><%= @architecture_lowest_rated%></li>
-
-<h4>Average Review Rating</h4>
-<li><%= @average_review_rating %></li>
-
-<h4>Average length of a Review</h4>
-<li><%= @review_average_length %></li>
-
-<h4>User with the most reviews</h4>
-<li><%= @highest_number_of_reviews %></li>
-
-<h4>Average Reviews per User</h4>
-<li><%= @users_average_review_count %></li>
-
-
-
-
-<% else %>
-  <p>"You are not an admin!"</p>
-<% end %>
+  <% else %>
+    <h1 style = "color: red;">"You are not an admin!"</h1>
+  <% end %>
+</div>
