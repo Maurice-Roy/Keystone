@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Keystone!
 
-Things you may want to cover:
+This project was created using Ruby on Rails with the full MVC pattern and a lot of many to many relationships.
 
-* Ruby version
+The first step is to create a user.
 
-* System dependencies
+Once you are logged in, you can search for an architecture by name, city, style or artist.
 
-* Configuration
+You can also see all the Architectural pieces in a certain city, or created by a certain artists.
 
-* Database creation
+You can write reviews about an architecture, add a new architecture or edit a current architecture/review.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Enjoy!
