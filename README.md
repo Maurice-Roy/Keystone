@@ -20,3 +20,7 @@ Enjoy!
 
 - Code needs refactoring
 - UI needs improvement - RWD
+
+## Video Demo
+
+Click <a href="https://youtu.be/79KgK_h6GrY" target="_blank">here</a> for a video demo of Behind the Music.
