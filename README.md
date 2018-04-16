@@ -23,4 +23,4 @@ Enjoy!
 
 ## Video Demo
 
-Click <a href="https://youtu.be/79KgK_h6GrY" target="_blank">here</a> for a video demo of Behind the Music.
+Click <a href="https://youtu.be/79KgK_h6GrY" target="_blank">here</a> for a video demo of Keystone.
